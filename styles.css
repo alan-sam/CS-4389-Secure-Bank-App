@@ -9,16 +9,16 @@ body {
 
 .container {
     max-width: 500px;
-    margin: 0 auto; /* Horizontally center the container */
+    margin: 0 auto; 
     padding: 30px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);
     background-color: green;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Vertically center the content */
-    height: 100vh; /* Make the container full viewport height */
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
 }
 
 
