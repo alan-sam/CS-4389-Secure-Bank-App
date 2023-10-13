@@ -1,0 +1,191 @@
+/* app.css */
+
+/* Global styles for the entire application */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #03280d;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+/* Styles for the login page */
+.login {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 5px solid #020101;
+  border-radius: 5px;
+  background-color: #ad6c09;
+}
+
+/* .login form .img {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50px; 
+} */
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.login h3 {
+  font-size: 24px;
+}
+
+.login label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.login .form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login .btn:hover {
+  background-color: #0056b3;
+}
+
+.login .mb-2 {
+  font-weight: bold;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.signin {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 5px solid #000000;
+  border-radius: 5px;
+  background-color: #ad6c09;
+}
+
+.signin form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.signin h3 {
+  font-size: 24px;
+}
+
+.signin label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: left; 
+}
+
+.signin .form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #070707;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box; 
+  width: 100%; 
+}
+
+.signin .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signin .btn:hover {
+  background-color: #0056b3;
+}
+
+.signin .mb-2 {
+  font-weight: bold;
+  align-items: center;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Navbar {
+  background-color: #034b25;
+  padding: 10px 0;
+  text-align: center; /* Center the content horizontally */
+}
+
+.Navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.Navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Dashboard  */
+.Dashboard {
+  background-color: #03280d;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px; 
+  min-height: calc(100vh - 70px); 
+}
