@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import { login } from '../api';
 import UTDImage from '../UTD.png';
+import { Button } from '@mui/material';
 
 
 function Login() {
@@ -49,7 +50,9 @@ function Login() {
             <input type='password' name='password' value={formData.password} onChange={handleInputChange} placeholder='Enter your password' className='form-control' required/>
             </div>
             <div className='d-grid'>
-                <button type="submit" className='btn btn-primary' onClick={handleSubmit}>Login in</button>
+                   
+                    <Button variant="contained">Contained</Button>
+                    
             </div>
             <div className='d-grid'>
                 <Link to = "/dashboard" className='btn btn-primary' >new</Link>
