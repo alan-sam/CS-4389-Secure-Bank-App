@@ -189,3 +189,60 @@ body {
   padding: 20px; 
   min-height: calc(100vh - 70px); 
 }
+/* Styles for the dropdown menus */
+.DropdownMenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 150px; /* Adjust the width as needed */
+  z-index: 1; /* Ensure the dropdown is above other elements */
+}
+
+/* Style for each dropdown menu item */
+.DropdownMenu li {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style for the last dropdown menu item to remove the border */
+.DropdownMenu li:last-child {
+  border-bottom: none;
+}
+
+/* Style for the dropdown menu item links */
+.DropdownMenu a {
+  text-decoration: none;
+  color: #333; /* Text color */
+  display: block;
+}
+
+/* Style for the dropdown menu item links on hover */
+.DropdownMenu a:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+  color: #000; /* Text color on hover */
+}
+
+/* Style for the active (open) dropdown menu item */
+.Navbar li:hover .DropdownMenu {
+  display: block;
+}
+
+/* Additional style for the Navbar list items */
+.Navbar li {
+  display: inline;
+  margin-right: 20px;
+  position: relative; /* Necessary for proper dropdown positioning */
+}
+
+/* Style for the right-aligned dropdown menus */
+.Navbar li:hover .DropdownMenu {
+  right: 0;
+  left: auto;
+}
