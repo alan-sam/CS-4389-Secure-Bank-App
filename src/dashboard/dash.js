@@ -18,41 +18,45 @@ function Dashboard() {
   };
 
   return (
-    <div>
-      {/* Navbar */}
-      <div className="Navbar">
-        <ul>
-          <li onClick={toggleAccountsDropdown}>
-            <a href="#">Accounts</a>
-            {isAccountsDropdownOpen && (
-              <ul className="DropdownMenu">
-                <li><a href="#">Checking</a></li>
-                <li><a href="#">Savings</a></li>
-              </ul>
-            )}
-          </li>
-          <li onClick={toggleTransactionsDropdown}>
-            <a href="#">Transactions</a>
-            {isTransactionsDropdownOpen && (
-              <ul className="DropdownMenu">
-                <li><a href="#">Recent Transactions</a></li>
-                <li><a href="#">Spend Analyzer</a></li>
-              </ul>
-            )}
-          </li>
-          <li onClick={toggleTransferDropdown}>
-            <a href="#">Transfer</a>
-            {isTransferDropdownOpen && (
-              <ul className="DropdownMenu">
-                <li><a href="#">Transfer to Checking</a></li>
-                <li><a href="#">Transfer to Savings</a></li>
-              </ul>
-            )}
-          </li>
-        </ul>
+    <div className="DashboardWithSidebar">
+      {/* Sidebar */}
+      <div className="Sidebar">
+        <div className="DashboardNavbar">
+          <ul>
+            <li onClick={toggleAccountsDropdown}>
+              <a href="#">Accounts</a>
+              {isAccountsDropdownOpen && (
+                <ul className="DropdownMenu">
+                  <li><a href="#">Checking</a></li>
+                  <li><a href="#">Savings</a></li>
+                </ul>
+              )}
+            </li>
+            <li onClick={toggleTransactionsDropdown}>
+              <a href="#">Transactions</a>
+              {isTransactionsDropdownOpen && (
+                <ul className="DropdownMenu">
+                  <li><a href="#">Recent Transactions</a></li>
+                  <li><a href="#">Spend Analyzer</a></li>
+                </ul>
+              )}
+            </li>
+            <li onClick={toggleTransferDropdown}>
+              <a href="#">Transfer</a>
+              {isTransferDropdownOpen && (
+                <ul className="DropdownMenu">
+                  <li><a href="#">Transfer to Checking</a></li>
+                  <li><a href="#">Transfer to Savings</a></li>
+                </ul>
+              )}
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="Dashboard">
-        <h1>This is the dashboard</h1>
+
+      {/* Main Content */}
+      <div className="MainContent">
+        <h1>Comet Bank</h1>
       </div>
     </div>
   );

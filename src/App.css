@@ -1,5 +1,3 @@
-/* app.css */
-
 /* Global styles for the entire application */
 body {
   font-family: Arial, sans-serif;
@@ -10,6 +8,7 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+
 /* Styles for the login page */
 .login {
   text-align: center;
@@ -24,15 +23,6 @@ body {
   border-radius: 5px;
   background-color: #ad6c09;
 }
-
-/* .login form .img {
-  position: absolute;
-  top: -70px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 50px; 
-} */
 
 .login form {
   display: flex;
@@ -54,7 +44,7 @@ body {
 .login .form-control {
   width: 100%;
   padding: 10px;
-  margin: 10px 0; 
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -77,15 +67,6 @@ body {
   font-weight: bold;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .signin {
   text-align: center;
   max-width: 300px;
@@ -114,7 +95,7 @@ body {
 .signin label {
   font-size: 14px;
   margin-bottom: 6px;
-  text-align: left; 
+  text-align: left;
 }
 
 .signin .form-control {
@@ -125,8 +106,8 @@ body {
   border-radius: 5px;
   display: block;
   margin: 0 auto;
-  box-sizing: border-box; 
-  width: 100%; 
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .signin .btn {
@@ -148,20 +129,11 @@ body {
   align-items: center;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Navbar */
 .Navbar {
   background-color: #034b25;
   padding: 10px 0;
-  text-align: center; /* Center the content horizontally */
+  text-align: center;
 }
 
 .Navbar ul {
@@ -186,19 +158,20 @@ body {
   background-color: #03280d;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px; 
-  min-height: calc(100vh - 70px); 
+  padding: 20px;
+  min-height: calc(100vh - 70px);
 }
+
 /* Styles for the dropdown menus */
 .DropdownMenu {
-  display: none;
-  position: absolute;
-  background-color: #fff;
+  
+  position: flex;
+  background-color: #03280d;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 0;
   list-style: none;
   margin: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #0a350d;
   border-radius: 4px;
   max-width: 150px; /* Adjust the width as needed */
   z-index: 1; /* Ensure the dropdown is above other elements */
@@ -245,4 +218,46 @@ body {
 .Navbar li:hover .DropdownMenu {
   right: 0;
   left: auto;
+}
+
+/* Styles for the Dashboard with a sidebar */
+.DashboardWithSidebar {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Styles for the Sidebar */
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #034b25;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Styles for the sidebar navigation links */
+.Sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Sidebar li {
+  margin-bottom: 10px;
+}
+
+.Sidebar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Styles for the Main Content */
+.MainContent {
+  margin-left: 200px;
+  padding: 20px;
+  background-color: #03280d;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }

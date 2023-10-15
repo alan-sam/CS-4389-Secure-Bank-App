@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d406202d.css",
+    "main.js": "/static/js/main.53de2c99.js",
+    "static/js/787.514d55bf.chunk.js": "/static/js/787.514d55bf.chunk.js",
+    "static/media/UTD.png": "/static/media/UTD.d8e17a4db18f1ed589d8.png",
+    "index.html": "/index.html",
+    "main.d406202d.css.map": "/static/css/main.d406202d.css.map",
+    "main.53de2c99.js.map": "/static/js/main.53de2c99.js.map",
+    "787.514d55bf.chunk.js.map": "/static/js/787.514d55bf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d406202d.css",
+    "static/js/main.53de2c99.js"
+  ]
+}
