@@ -10,81 +10,45 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+
 /* Styles for the login page */
 .login {
-  text-align: center;
-  max-width: 300px;
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #ad6c09;
   border: 5px solid #020101;
   border-radius: 5px;
-  background-color: #ad6c09;
-}
-
-/* .login form .img {
-  position: absolute;
-  top: -70px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 50px; 
-} */
-
-.login form {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 }
 
-.login h3 {
-  font-size: 24px;
+.login-form label {
+  margin-bottom: 0.5rem;
 }
 
-.login label {
-  font-size: 14px;
-  margin-bottom: 6px;
-  text-align: left;
+/* Override Material-UI input styles */
+.login-form .MuiInput-root {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #000;
+  border-radius: 3px;
 }
 
-.login .form-control {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0; 
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.login .btn {
-  width: 100%;
-  padding: 10px;
+.login-form button {
   background-color: #007bff;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.login .btn:hover {
-  background-color: #0056b3;
-}
-
-.login .mb-2 {
-  font-weight: bold;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-link {
+  margin-top: 2rem;
+  text-align: center;
 }
 .signin {
   text-align: center;
