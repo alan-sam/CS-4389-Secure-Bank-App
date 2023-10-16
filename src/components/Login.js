@@ -5,31 +5,28 @@ import { login } from '../api';
 import UTDImage from '../UTD.png';
 import { Button, TextField, Container, Typography, Box } from '@mui/material';
 
-
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
-    password: '',
+    password: ''
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await login(formData);
 
-      
       console.log('Login successful:', response);
     } catch (error) {
-    
       console.error('Login failed:', error);
     }
   };

@@ -59,9 +59,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border: 5px solid #000000;
-  border-radius: 5px;
-  background-color: #ad6c09;
+  border: 3px solid #f57c00;
+  border-radius: 3px;
+  background-color: white;
 }
 
 .signin form {
@@ -78,7 +78,7 @@ body {
 .signin label {
   font-size: 14px;
   margin-bottom: 6px;
-  text-align: left; 
+  text-align: left;
 }
 
 .signin .form-control {
@@ -89,8 +89,8 @@ body {
   border-radius: 5px;
   display: block;
   margin: 0 auto;
-  box-sizing: border-box; 
-  width: 100%; 
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .signin .btn {
@@ -111,7 +111,6 @@ body {
   font-weight: bold;
   align-items: center;
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -150,8 +149,8 @@ body {
   background-color: #03280d;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px; 
-  min-height: calc(100vh - 70px); 
+  padding: 20px;
+  min-height: calc(100vh - 70px);
 }
 /* Styles for the dropdown menus */
 .DropdownMenu {
