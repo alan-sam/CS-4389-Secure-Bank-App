@@ -2,7 +2,7 @@
 
 # Comet Bank
 
-Welcome to Comet Bank - a modern web application built with React, Node.js, and Material-UI (MUI).
+Welcome to Comet Bank - a modern web application built with React, Springboot framework, and Material-UI (MUI).
 
 ## Project Overview
 
