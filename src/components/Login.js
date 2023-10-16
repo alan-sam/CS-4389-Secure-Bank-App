@@ -24,7 +24,6 @@ function Login() {
 
     try {
       const response = await login(formData);
-
       console.log('Login successful:', response);
     } catch (error) {
       console.error('Login failed:', error);
@@ -35,43 +34,46 @@ function Login() {
     <div className="login">
       <Container component="main" maxWidth="xs">
         <div className="login-form">
-          <form noValidate onSubmit={handleSubmit}>
-            <Typography component="h1" variant="h5" color={'#f57c00'}>
-              Login
-            </Typography>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              value={formData.password}
-              onChange={handleInputChange}
-            />
-            <Button type="submit"  variant="contained" color="warning">
-              Login
-            </Button>
+          <Typography component="h1" variant="h5" color={'#f57c00'}>
+            Login
+          </Typography>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            value={formData.password}
+            onChange={handleInputChange}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="warning"
+            onClick={handleSubmit}
+          >
+            Login
+          </Button>
 
-            <Box className="login-link">
-              <p>
-                Don't have an account? <Link to="/signin">SignUp</Link>
-              </p>
-              </Box>
-          </form>
+          <Box className="login-link">
+            <p>
+              Don't have an account? <Link to="/signin">Sign Up</Link>
+            </p>
+          </Box>
         </div>
       </Container>
     </div>
