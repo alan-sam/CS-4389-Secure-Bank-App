@@ -36,7 +36,7 @@ function Login() {
       <Container component="main" maxWidth="xs">
         <div className="login-form">
           <form noValidate onSubmit={handleSubmit}>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" color={'#f57c00'}>
               Login
             </Typography>
             <TextField
@@ -62,17 +62,15 @@ function Login() {
               value={formData.password}
               onChange={handleInputChange}
             />
-            <Button type="submit" fullWidth variant="contained">
+            <Button type="submit"  variant="contained" color="warning">
               Login
             </Button>
-            <Link to="/dashboard" className="login-link">
-              New
-            </Link>
+
             <Box className="login-link">
               <p>
-                Don't have an account? <Link to="/signin">Sign Up</Link>
+                Don't have an account? <Link to="/signin">SignUp</Link>
               </p>
-            </Box>
+              </Box>
           </form>
         </div>
       </Container>
