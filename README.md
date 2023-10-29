@@ -39,4 +39,6 @@ To get started with **Project Name**, follow these steps:
 
 4. npm start
 
+5. afterrunning use username = 'alan@gmail.com', password = '112'.
+
 That would start your application and work.
