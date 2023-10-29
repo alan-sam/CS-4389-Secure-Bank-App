@@ -3,7 +3,7 @@
 /* Global styles for the entire application */
 body {
   font-family: Arial, sans-serif;
-  background-color: #005231;
+  background-color: #03280d;
   margin: 0;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border: 3px solid #f2792b;
+  border: 3px solid #f57c00;
   border-radius: 3px;
   background-color: white;
 }
@@ -153,48 +153,16 @@ body {
     transform: rotate(360deg);
   }
 }
-
-.Navbar {
-  background-color: #034b25;
-  padding: 10px 0;
-  text-align: center; /* Center the content horizontally */
-}
-
-.Navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.Navbar li {
-  display: inline;
-  margin-right: 20px;
-}
-
-.Navbar a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
-
-/* Dashboard  */
-.Dashboard {
-  background-color: #03280d;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  min-height: calc(100vh - 70px);
-}
 /* Styles for the dropdown menus */
 .DropdownMenu {
-  display: none;
-  position: absolute;
-  background-color: #fff;
+  
+  position: flex;
+  background-color: #03280d;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 0;
   list-style: none;
   margin: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #0a350d;
   border-radius: 4px;
   max-width: 150px; /* Adjust the width as needed */
   z-index: 1; /* Ensure the dropdown is above other elements */
@@ -241,4 +209,46 @@ body {
 .Navbar li:hover .DropdownMenu {
   right: 0;
   left: auto;
+}
+
+/* Styles for the Dashboard with a sidebar */
+.DashboardWithSidebar {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Styles for the Sidebar */
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #034b25;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Styles for the sidebar navigation links */
+.Sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Sidebar li {
+  margin-bottom: 10px;
+}
+
+.Sidebar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Styles for the Main Content */
+.MainContent {
+  margin-left: 200px;
+  padding: 20px;
+  background-color: #03280d;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
