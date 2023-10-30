@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Account from './dash-function/account';
 function Dashboard() {
   const [isAccountsDropdownOpen, setAccountsDropdownOpen] = useState(false);
   const [isTransactionsDropdownOpen, setTransactionsDropdownOpen] = useState(false);
@@ -27,7 +27,7 @@ function Dashboard() {
               <a href="#">Accounts</a>
               {isAccountsDropdownOpen && (
                 <ul className="DropdownMenu">
-                  <li><a href="#">Checking</a></li>
+                  <li><a href="/Account">Checking</a></li>
                   <li><a href="#">Savings</a></li>
                 </ul>
               )}

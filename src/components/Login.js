@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { Button, TextField, Container, Typography, Box } from '@mui/material';
+import '../App.css';
+import logo from '../UTD.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -69,6 +71,9 @@ const Login = () => {
       <Container component="main" maxWidth="xs">
         <div className="login-form">
           <form noValidate>
+          <Box sx={{ textAlign: 'center', mb: 2 }}>
+              <img src={logo} alt="Logo" width="72" />
+          </Box>
             <Typography component="h1" variant="h5" color={'#f57c00'}>
               Login
             </Typography>

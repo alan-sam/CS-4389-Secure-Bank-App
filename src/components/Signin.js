@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import the Link component
 import '../App.css';
-import { Typography, TextField, Container, Button } from '@mui/material';
+import { Typography, TextField, Container, Button, Box } from '@mui/material';
+import logo from '../UTD.png'
 
 function Signin() {
   const [signUpInfo, setSignUpInfo] = useState({
@@ -33,6 +34,9 @@ function Signin() {
   return (
     <div className="signin">
       <Container>
+      <Box sx={{ textAlign: 'center', mb: 2 }}>
+              <img src={logo} alt="Logo" width="72" />
+      </Box>
         <Typography component="h1" variant="h5" color={'#f57c00'}>
           SignUp
         </Typography>
