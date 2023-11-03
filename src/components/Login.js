@@ -10,6 +10,8 @@ const Login = () => {
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState(null);
+  const [sessionTimeout, setSessionTimeout] = useState(null);
+
 
   function sendLoginRequest() {
     setErrorMsg("");
@@ -32,6 +34,7 @@ const Login = () => {
     
         if (response.status === 200 && data === true) {
           navigate("/dashboard");
+          startSessionTimer();
         } else if (response.status === 200 && data === false) {
           setErrorMsg("Invalid username or password");
         } else if (response.status === 401 || response.status === 403) {
@@ -43,6 +46,42 @@ const Login = () => {
       .catch((error) => {
         console.error('Login Error:', error);
       });
+
+      const startSessionTimer = () => {
+        // Clear any existing timers
+        if (sessionTimeout) clearTimeout(sessionTimeout);
+    
+        // Set a new timer
+        const timeout = setTimeout(() => {
+          showLogoutWarning();
+        }, 10000); // 1 minute in milliseconds
+    
+        // Save the timeout to state so we can clear it if needed
+        setSessionTimeout(timeout);
+    };
+    const showLogoutWarning = () => {
+      let userHasResponded = false;
+      setTimeout(() => {
+          if (!userHasResponded) {
+              // If the user hasn't responded in 5 seconds, log them out
+              navigate("/");
+          }
+      }, 5000); // Auto logout after 5 seconds if no response
+  
+      const userConfirmed = window.confirm("You will be logged out due to inactivity. Do you want to stay logged in?");
+      userHasResponded = true;
+  
+      if (userConfirmed) {
+          // If the user wants to stay logged in, reset the session timer
+          startSessionTimer();
+      } else {
+          // If the user chose to log out, navigate to the login page
+          navigate("/");
+      }
+  };
+  
+  
+  
   }
   
   // const validCredentials = [

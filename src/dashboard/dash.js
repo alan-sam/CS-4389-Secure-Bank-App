@@ -88,7 +88,7 @@ function Dashboard() {
           {openDrawer && 'Logout'}
         </Button>
       </Drawer>
-      <h1 alignment = "centre">This is my comet App</h1>
+      
     </div>
   );
 }
