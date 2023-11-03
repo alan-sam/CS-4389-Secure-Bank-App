@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import {
-  AppBar, Toolbar, Drawer, Button, Box, CssBaseline,
-} from '@mui/material';
+import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Drawer, Button, Box, CssBaseline } from '@mui/material';
 import { AccountBox, ListAlt, ExitToApp, Send } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
@@ -20,7 +19,7 @@ function Dashboard() {
   };
 
   // Function to render a button for the drawer
-  const renderDrawerButton = (icon, label) => (
+  const renderDrawerButton = (icon, label, path) => (
     <Button 
       startIcon={icon}
       sx={{
@@ -29,6 +28,8 @@ function Dashboard() {
         padding: '10px 16px',
         color: 'white'
       }}
+      component={Link}
+      to={path}
     >
       {openDrawer && label}
     </Button>
@@ -69,9 +70,9 @@ function Dashboard() {
             flexGrow: 1 
           }}
         >
-          {renderDrawerButton(<AccountBox />, 'Account')}
-          {renderDrawerButton(<ListAlt />, 'Transactions')}
-          {renderDrawerButton(<Send />, 'Transfer')}
+          {renderDrawerButton(<AccountBox />, 'Account', '/dashboard/account')}
+          {renderDrawerButton(<ListAlt />, 'Transactions', '/dashboard/transactions')}
+          {renderDrawerButton(<Send />, 'Transfer', '/dashboard/transfer')}
         </Box>
 
         {/* Logout Button */}
@@ -94,8 +95,6 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
 
 
 

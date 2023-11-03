@@ -54,7 +54,7 @@ const Login = () => {
         // Set a new timer
         const timeout = setTimeout(() => {
           showLogoutWarning();
-        }, 10000); // 1 minute in milliseconds
+        }, 5 * 60000); // 1 minute in milliseconds
     
         // Save the timeout to state so we can clear it if needed
         setSessionTimeout(timeout);
