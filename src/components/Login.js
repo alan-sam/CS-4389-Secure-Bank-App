@@ -150,9 +150,8 @@ const Login = () => {
               Don't have an account? <Link to="/signin">Sign Up</Link>
             </p>
           </Box>
-          {/* <Button variant="contained" color="warning">
             <Link to="/dashboard">Dashboard</Link>
-          </Button> */}
+         
         </div>
       </Container>
     </div>
