@@ -11,59 +11,59 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState(null);
 
-  // function sendLoginRequest() {
-  //   setErrorMsg("");
-  //   const reqBody = {
-  //     email: 'alan@gmail.com',
-  //     password: '112',
-  //   };
-  
-  //   fetch("api/auth/login", {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     method: "post",
-  //     body: JSON.stringify(reqBody),
-  //   })
-  //     .then((response) => {
-  //       console.log('Response Status:', response.status);
-  //       if (response.status === 200) return response.text();
-  //       else if (response.status === 401 || response.status === 403) {
-  //         setErrorMsg("Invalid username or password");
-  //       } else {
-  //         setErrorMsg("Something went wrong, try again later.");
-  //       }
-  //     })
-  //     .then((data) => {
-  //       if (data) {
-  //         console.log('Login Data:', data);
-  //         navigate("/dashboard");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error('Login Error:', error);
-  //     });
-  // }
-  
-  const validCredentials = [
-    { email: 'alan@gmail.com', password: '112' },
-    
-    // Add more credentials as needed
-    { email: 'rajas2.kothari@gmail.com', password: 'password2'},
-  ];
-
   function sendLoginRequest() {
     setErrorMsg("");
-
-    // Check if the provided email and password match any of the valid credentials
-    const isValid = validCredentials.some(cred => cred.email === email && cred.password === password);
-
-    if (isValid) {
-      navigate("/dashboard");
-    } else {
-      setErrorMsg("Incorrect username or password");
-    }
+    const reqBody = {
+      email: email,
+      password: password,
+    };
+  
+    fetch("http://localhost:8080/bankingApp/login", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: 'POST',
+      body: JSON.stringify(reqBody),
+    })
+      .then(async (response) => {
+        const data = await response.json(); // Assuming the server responds with JSON data
+        console.log('Response Status:', response.status);
+        console.log('Login Data:', data);
+    
+        if (response.status === 200 && data === true) {
+          navigate("/dashboard");
+        } else if (response.status === 200 && data === false) {
+          setErrorMsg("Invalid username or password");
+        } else if (response.status === 401 || response.status === 403) {
+          setErrorMsg("Invalid username or password");
+        } else {
+          setErrorMsg("Something went wrong, try again later.");
+        }
+      })
+      .catch((error) => {
+        console.error('Login Error:', error);
+      });
   }
+  
+  // const validCredentials = [
+  //   { email: 'alan@gmail.com', password: '112' },
+    
+  //   // Add more credentials as needed
+  //   { email: 'rajas2.kothari@gmail.com', password: 'password2'},
+  // ];
+
+  // function sendLoginRequest() {
+  //   setErrorMsg("");
+
+  //   // Check if the provided email and password match any of the valid credentials
+  //   const isValid = validCredentials.some(cred => cred.email === email && cred.password === password);
+
+  //   if (isValid) {
+  //     navigate("/dashboard");
+  //   } else {
+  //     setErrorMsg("Incorrect username or password");
+  //   }
+  // }
 
 
   return (

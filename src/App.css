@@ -156,6 +156,7 @@ body {
 /* Styles for the dropdown menus */
 .DropdownMenu {
   
+  display: none;
   position: flex;
   background-color: #03280d;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -192,6 +193,7 @@ body {
   background-color: #f0f0f0; /* Background color on hover */
   color: #000; /* Text color on hover */
 }
+
 
 /* Style for the active (open) dropdown menu item */
 .Navbar li:hover .DropdownMenu {
@@ -252,3 +254,12 @@ body {
   color: #fff;
   font-family: Arial, sans-serif;
 }
+
+
+.desh {
+  background-color:#03280d;
+  height: 100vh; /* full viewport height */
+  width: 100vw; /* full viewport width */
+}
+
+  

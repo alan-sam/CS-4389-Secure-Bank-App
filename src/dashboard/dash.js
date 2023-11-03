@@ -1,66 +1,94 @@
 import React, { useState } from 'react';
-import Account from './dash-function/account';
+import {
+  AppBar, Toolbar, Drawer, Button, Box, CssBaseline,
+} from '@mui/material';
+import { AccountBox, ListAlt, ExitToApp, Send } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import '../App.css';
+
 function Dashboard() {
-  const [isAccountsDropdownOpen, setAccountsDropdownOpen] = useState(false);
-  const [isTransactionsDropdownOpen, setTransactionsDropdownOpen] = useState(false);
-  const [isTransferDropdownOpen, setTransferDropdownOpen] = useState(false);
+  // State for handling drawer open/close
+  const [openDrawer, setOpenDrawer] = useState(false);
 
-  const toggleAccountsDropdown = () => {
-    setAccountsDropdownOpen(!isAccountsDropdownOpen);
+  // Router navigation
+  const navigate = useNavigate();
+
+  // Function to handle logout
+  const handleLogout = () => {
+    // Redirecting user to the login page
+    navigate('/');
   };
 
-  const toggleTransactionsDropdown = () => {
-    setTransactionsDropdownOpen(!isTransactionsDropdownOpen);
-  };
-
-  const toggleTransferDropdown = () => {
-    setTransferDropdownOpen(!isTransferDropdownOpen);
-  };
+  // Function to render a button for the drawer
+  const renderDrawerButton = (icon, label) => (
+    <Button 
+      startIcon={icon}
+      sx={{
+        textTransform: 'none',
+        justifyContent: 'flex-start',
+        padding: '10px 16px',
+        color: 'white'
+      }}
+    >
+      {openDrawer && label}
+    </Button>
+  );
 
   return (
-    <div className="DashboardWithSidebar">
-      {/* Sidebar */}
-      <div className="Sidebar">
-        <div className="DashboardNavbar">
-          <ul>
-            <li onClick={toggleAccountsDropdown}>
-              <a href="#">Accounts</a>
-              {isAccountsDropdownOpen && (
-                <ul className="DropdownMenu">
-                  <li><a href="/Account">Checking</a></li>
-                  <li><a href="#">Savings</a></li>
-                </ul>
-              )}
-            </li>
-            <li onClick={toggleTransactionsDropdown}>
-              <a href="#">Transactions</a>
-              {isTransactionsDropdownOpen && (
-                <ul className="DropdownMenu">
-                  <li><a href="#">Recent Transactions</a></li>
-                  <li><a href="#">Spend Analyzer</a></li>
-                </ul>
-              )}
-            </li>
-            <li onClick={toggleTransferDropdown}>
-              <a href="#">Transfer</a>
-              {isTransferDropdownOpen && (
-                <ul className="DropdownMenu">
-                  <li><a href="#">Transfer to Checking</a></li>
-                  <li><a href="#">Transfer to Savings</a></li>
-                </ul>
-              )}
-            </li>
-            <li onClick='/'>
-              <a href="/">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div className="desh">
+      <CssBaseline />
 
-      {/* Main Content */}
-      <div className="MainContent">
-        <h1>Comet Bank</h1>
-      </div>
+      {/* Main Toolbar */}
+      <Toolbar />
+
+      {/* Sidebar */}
+      <Drawer
+        variant="permanent"
+        open={openDrawer}
+        onMouseEnter={() => setOpenDrawer(true)}
+        onMouseLeave={() => setOpenDrawer(false)}
+        sx={{
+          width: 240,
+          '& .MuiDrawer-paper': {
+            width: 240,
+            transition: '.3s',
+            overflowX: 'hidden',
+            backgroundColor: '#f57c00',
+            width: openDrawer ? 240 : 60,
+          }
+        }}
+      >
+        {/* Additional Toolbar inside Drawer */}
+        <Toolbar />
+
+        {/* Drawer content */}
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            flexGrow: 1 
+          }}
+        >
+          {renderDrawerButton(<AccountBox />, 'Account')}
+          {renderDrawerButton(<ListAlt />, 'Transactions')}
+          {renderDrawerButton(<Send />, 'Transfer')}
+        </Box>
+
+        {/* Logout Button */}
+        <Button 
+          startIcon={<ExitToApp />}
+          onClick={handleLogout}
+          sx={{
+            textTransform: 'none',
+            justifyContent: 'flex-start',
+            padding: '10px 16px',
+            color: 'white'
+          }}
+        >
+          {openDrawer && 'Logout'}
+        </Button>
+      </Drawer>
+      <h1 alignment = "centre">This is my comet App</h1>
     </div>
   );
 }
