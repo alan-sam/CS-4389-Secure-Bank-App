@@ -13,7 +13,7 @@ Comet Bank is a full-stack web application designed to [briefly describe your pr
 **Comet Bank** includes a range of features:
 
 - **Feature 1**: Secure Banking application
-- **Feature 2**: Authetication with encryption of email and password to the database
+- **Feature 2**: Authentication with encryption of email and password to the database
 - **Feature 3**: Having session and timeouts
 
 ## Prerequisites
@@ -39,6 +39,8 @@ To get started with **Project Name**, follow these steps:
 
 4. npm start
 
-5. afterrunning use username = 'alan@gmail.com', password = 'password'. 
+5. Make sure you run the backend in Intellij or any java compiler and then it will login with the following username and password.
+
+6. afterrunning use username = 'alan@gmail.com', password = 'password'. 
 
 That would start your application and work.
