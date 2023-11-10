@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Drawer, Button, Box, CssBaseline } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppBar, Toolbar, Drawer, Button, Box, Typography, CssBaseline } from '@mui/material';
 import { AccountBox, ListAlt, ExitToApp, Send } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import {
+   Card, CardContent, CardHeader, Divider, List, ListItem, ListItemText, Grid, Paper, Avatar
+} from '@mui/material';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import '../App.css';
 
 function Dashboard() {
@@ -12,14 +16,30 @@ function Dashboard() {
   // Router navigation
   const navigate = useNavigate();
 
+  // Dummy data for current amount
+  const currentAmount = 10000;  // You can fetch this from your backend or state
+
   // Function to handle logout
   const handleLogout = () => {
     // Redirecting user to the login page
     navigate('/');
   };
-
+  const user = {
+    name: 'Rajas Kothari',
+    accountNumber: '1234567890',
+    routingNumber: '0987654321',
+    balance: 3500.25,
+    transactions: [
+      { id: 1, date: '2023-10-25', description: 'Paycheck deposit', amount: 1000 },
+      { id: 2, date: '2023-10-26', description: 'Debit card purchase', amount: -45.20 },
+      { id: 3, date: '2023-10-27', description: 'Online transfer', amount: -200 },
+      { id: 4, date: '2023-10-28', description: 'Refund', amount: 50 },
+    ]
+  };
+  const balanceColor = user.balance >= 0 ? 'green' : 'red';
   // Function to render a button for the drawer
   const renderDrawerButton = (icon, label, path) => (
+    
     <Button 
       startIcon={icon}
       sx={{
@@ -61,8 +81,10 @@ function Dashboard() {
       >
         {/* Additional Toolbar inside Drawer */}
         <Toolbar />
+        
+        {/* Welcome Message */}
+        {openDrawer && <Typography variant="h6" sx={{ paddingLeft: 2, color: 'white', paddingBottom: 2 }}>Welcome, Rajas</Typography>}
 
-        {/* Drawer content */}
         <Box 
           sx={{ 
             display: 'flex', 
@@ -70,9 +92,10 @@ function Dashboard() {
             flexGrow: 1 
           }}
         >
-          {renderDrawerButton(<AccountBox />, 'Account', '/dashboard/account')}
+          {renderDrawerButton(<AccountBox />, 'Account', '/dashboard')}
           {renderDrawerButton(<ListAlt />, 'Transactions', '/dashboard/transactions')}
           {renderDrawerButton(<Send />, 'Transfer', '/dashboard/transfer')}
+          {renderDrawerButton(<Send/>, 'Contact', '/dashboard/Contact')}
         </Box>
 
         {/* Logout Button */}
@@ -90,14 +113,58 @@ function Dashboard() {
         </Button>
       </Drawer>
       
+      <Card style={{ width: '50%', margin: '2em auto', padding: '1em', backgroundColor: '#f5f5f5' }}>
+      <CardHeader 
+        avatar={
+          <Avatar style={{ backgroundColor: balanceColor }}>
+            <AccountBalanceIcon />
+          </Avatar>
+        }
+        title={<Typography variant="h5">Checking Account</Typography>}
+      />
+      
+      <CardContent>
+        <Grid container spacing={3}>
+          <Grid item xs={6}>
+            <Typography variant="h4">{user.name}</Typography>
+            <Typography variant="subtitle1">Account Number: {user.accountNumber}</Typography>
+            <Typography variant="subtitle1">Routing Number: {user.routingNumber}</Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Paper elevation={3} style={{ padding: '1em', textAlign: 'center', backgroundColor: balanceColor, color: 'white' }}>
+              <AttachMoneyIcon fontSize="large" />
+              <Typography variant="h5">Balance: ${user.balance.toFixed(2)}</Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+
+        <Divider style={{ margin: '1em 0', backgroundColor: '#333' }}/>
+
+        <List>
+            {user.transactions.map(t => (
+                <ListItem key={t.id}>
+                  <ListItemText
+                    primary={t.description}
+                    secondary={`${t.amount >= 0 ? '+' : ''}${t.amount.toFixed(2)}`}
+                    style={{ textAlign: 'left' }}
+                  />
+                  <ListItemText
+                    primary={t.date}
+                    style={{ textAlign: 'right' }}
+                  />
+                </ListItem>
+              ))}
+        </List>
+
+        
+      </CardContent>
+    </Card>
+
     </div>
   );
 }
 
 export default Dashboard;
-
-
-
 
 
 

@@ -20,7 +20,7 @@ const Login = () => {
       password: password,
     };
   
-    fetch("http://localhost:8080/bankingApp/login", {
+    fetch("http://localhost:9000/bankingApp/login", { // Update this URL based on your Spring Boot route
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,23 +28,24 @@ const Login = () => {
       body: JSON.stringify(reqBody),
     })
       .then(async (response) => {
-        const data = await response.json(); // Assuming the server responds with JSON data
+        const data = await response.json(); // Assuming server responds with JSON
         console.log('Response Status:', response.status);
         console.log('Login Data:', data);
-    
-        if (response.status === 200 && data === true) {
-          navigate("/dashboard");
-          startSessionTimer();
-        } else if (response.status === 200 && data === false) {
-          setErrorMsg("Invalid username or password");
-        } else if (response.status === 401 || response.status === 403) {
-          setErrorMsg("Invalid username or password");
+  
+        if (response.status === 200) {
+          if(data === true) {
+            navigate(`/auth?email=${email}`); // Update to navigate to the dashboard or appropriate route
+            startSessionTimer();
+          } else {
+            setErrorMsg("Invalid username or password");
+          }
         } else {
           setErrorMsg("Something went wrong, try again later.");
         }
       })
       .catch((error) => {
         console.error('Login Error:', error);
+        setErrorMsg("An error occurred during login.");
       });
 
       const startSessionTimer = () => {
@@ -54,7 +55,7 @@ const Login = () => {
         // Set a new timer
         const timeout = setTimeout(() => {
           showLogoutWarning();
-        }, 5 * 60000); // 1 minute in milliseconds
+        }, 10 * 60000); // 5 minute in milliseconds
     
         // Save the timeout to state so we can clear it if needed
         setSessionTimeout(timeout);
@@ -83,26 +84,7 @@ const Login = () => {
   
   
   }
-  
-  // const validCredentials = [
-  //   { email: 'alan@gmail.com', password: '112' },
-    
-  //   // Add more credentials as needed
-  //   { email: 'rajas2.kothari@gmail.com', password: 'password2'},
-  // ];
 
-  // function sendLoginRequest() {
-  //   setErrorMsg("");
-
-  //   // Check if the provided email and password match any of the valid credentials
-  //   const isValid = validCredentials.some(cred => cred.email === email && cred.password === password);
-
-  //   if (isValid) {
-  //     navigate("/dashboard");
-  //   } else {
-  //     setErrorMsg("Incorrect username or password");
-  //   }
-  // }
 
 
   return (
