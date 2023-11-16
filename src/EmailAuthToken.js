@@ -21,7 +21,7 @@ const EmailTokenAuth = () => {
     const storedToken = localStorage.getItem('simulatedAuthToken');
     
     if (token === storedToken) {
-      navigate('/dashboard');
+      navigate('/dashboard/account');
       localStorage.removeItem('simulatedAuthToken'); // Clear the token after use
     } else {
       alert("Invalid or expired token.");
