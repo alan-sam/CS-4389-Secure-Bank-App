@@ -1,8 +1,11 @@
 import React from 'react'
+import Dashboard from "../dash";
 
 function transfer() {
   return (
-    <div>transfer</div>
+      <div className = 'dash' style={{display: 'flex'}}>
+        <Dashboard></Dashboard>
+      </div>
   )
 }
 

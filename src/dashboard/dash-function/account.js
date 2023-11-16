@@ -56,7 +56,7 @@ export default function Account() {
                   <ListItem key={t.id}>
                     <ListItemText
                         primary={t.description}
-                        secondary={`${t.amount >= 0 ? '+' : ''}${t.amount.toFixed(2)}`}
+                        secondary={<Typography style={{ color: t.amount < 0 ? 'red' : 'green'}}>{t.amount >= 0 ? '+' : ''}{t.amount.toFixed(2)}</Typography>}
                         style={{ textAlign: 'left' }}
                     />
                     <ListItemText
