@@ -77,7 +77,7 @@ function Dashboard() {
             flexGrow: 1 
           }}
         >
-          {renderDrawerButton(<AccountBox />, 'Account', '/dashboard')}
+          {renderDrawerButton(<AccountBox />, 'Account', '/dashboard/account')}
           {renderDrawerButton(<ListAlt />, 'Transactions', '/dashboard/transactions')}
           {renderDrawerButton(<Send />, 'Transfer', '/dashboard/transfer')}
           {renderDrawerButton(<Send/>, 'Contact', '/dashboard/Contact')}
