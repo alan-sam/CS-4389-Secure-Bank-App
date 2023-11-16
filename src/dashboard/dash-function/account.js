@@ -12,10 +12,11 @@ const user = {
   routingNumber: '0987654321',
   balance: 3500.25,
   transactions: [
-    { id: 1, date: '2023-10-25', description: 'Paycheck deposit', amount: 1000 },
-    { id: 2, date: '2023-10-26', description: 'Debit card purchase', amount: -45.20 },
-    { id: 3, date: '2023-10-27', description: 'Online transfer', amount: -200 },
+    { id: 4, date: '2023-10-28', description: 'Netflix subscription', amount: -16.99 },
     { id: 4, date: '2023-10-28', description: 'Refund', amount: 50 },
+    { id: 3, date: '2023-10-27', description: 'Online transfer', amount: -200 },
+    { id: 2, date: '2023-10-26', description: 'Debit card purchase', amount: -45.20 },
+    { id: 1, date: '2023-10-25', description: 'Paycheck deposit', amount: 1000 }
   ]
 };
 
