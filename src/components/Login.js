@@ -132,7 +132,7 @@ const Login = () => {
               Don't have an account? <Link to="/signin">Sign Up</Link>
             </p>
           </Box>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/dashboard/account">Dashboard</Link>
          
         </div>
       </Container>

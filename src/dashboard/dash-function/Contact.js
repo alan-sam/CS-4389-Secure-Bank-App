@@ -1,37 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Dashboard from "../dash";
-import { Link, useNavigate } from 'react-router-dom';
-import { AppBar, Toolbar, Drawer, Button, Box, Typography, CssBaseline } from '@mui/material';
+import { Card, CardContent, Typography, useTheme, useMediaQuery } from '@mui/material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Contact = props => {
-    return (
-        <div className = 'dash' style={{display: 'flex'}}>
-            <Dashboard></Dashboard>
-            <Box
-                sx={{
-                    margin: '10rem',
-                    padding: '1.5rem',
-                    border: '5px solid #e0e0e0',
-                    borderRadius: '5px',
-                    backgroundColor: '#f57c00',
-                    height: '30rem',
-                    width: '50%'
-                }}
-            >
-                <Typography variant="h6" gutterBottom>
-                    Contact Page
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    Phone Number: 222-222-2222
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    Email: CometBank@gmail.com
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    254 Washington Street, Washington.
-                </Typography>
-            </Box>
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+    return (
+        <div className='dash' style={{ display: 'flex', backgroundColor: '#0a350d' }}>
+            <Dashboard />
+            <Card style={{ width: '50%', margin: '10em auto', padding: '1em', backgroundColor: '#f5f5f5' }}>
+                <CardContent>
+                    <Typography variant="h5" gutterBottom>
+                        Contact Page
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        <PhoneIcon /> Phone Number: 222-222-2222
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        <EmailIcon /> Email: CometBank@gmail.com
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        <LocationOnIcon /> 254 Washington Street, Washington.
+                    </Typography>
+                </CardContent>
+            </Card>
         </div>
     );
 };
