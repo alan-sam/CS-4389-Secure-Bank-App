@@ -22,7 +22,6 @@ To get started, ensure you have:
 
 - Node.js and npm installed ([Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/))
 - A fundamental understanding of JavaScript, React, and Material-UI
-- [Any other prerequisites specific to the project]
 
 ## Installation Guide
 
