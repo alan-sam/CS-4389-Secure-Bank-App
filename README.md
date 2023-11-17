@@ -36,7 +36,7 @@ Follow these steps to set up Comet Bank:
 
 2. **Navigate to Project Directory**:
    ```bash
-   cd CS-4389-Comet-Bank
+   cd CS-4389-Secure-Bank-App
    ```
 
 3. **Install Dependencies**:
