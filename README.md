@@ -2,45 +2,64 @@
 
 # Comet Bank
 
-Welcome to Comet Bank - a modern web application built with React, Springboot framework, and Material-UI (MUI).
+Welcome to Comet Bank, a cutting-edge web application leveraging the power of React, the efficiency of the Springboot framework, and the aesthetic appeal of Material-UI (MUI).
 
 ## Project Overview
 
-Comet Bank is a full-stack web application designed to [briefly describe your project's primary goal or purpose].
+Comet Bank is a full-stack web application designed to provide a secure, user-friendly online banking experience. It integrates modern web technologies to deliver a reliable and efficient platform for managing financial transactions and accounts.
 
-## Features
+## Key Features
 
-**Comet Bank** includes a range of features:
+Comet Bank boasts a variety of features to ensure a seamless banking experience:
 
-- **Feature 1**: Secure Banking application
-- **Feature 2**: Authentication with encryption of email and password to the database
-- **Feature 3**: Having session and timeouts
+- **Secure Banking Application**: Utilizes advanced security measures to protect user data and transactions.
+- **Encrypted Authentication**: Implements robust encryption for email and password storage in the database, ensuring user credentials are securely handled.
+- **Session Management**: Features session control with automatic timeouts for enhanced security.
 
 ## Prerequisites
 
-Before you begin, make sure you have the following:
+To get started, ensure you have:
 
-- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed
-- Basic knowledge of JavaScript, React, and Material-UI
-- [Any additional prerequisites specific to your project]
+- Node.js and npm installed ([Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/))
+- A fundamental understanding of JavaScript, React, and Material-UI
+- [Any other prerequisites specific to the project]
 
-## Installation
+## Installation Guide
 
-To get started with **Project Name**, follow these steps:
+Follow these steps to set up Comet Bank:
 
-1. Clone the repository:
-   use github desktop, VScode or cmd (if cmd  ```bash)
-  https://github.com/alan-sam/CS-4389-Secure-Bank-App.git
-   
-2. Cd to the project folder
-    cd project-name
+1. **Clone the Repository**:
+   - Use GitHub Desktop, VSCode, or command line. 
+   - If using the command line, enter:
+     ```bash
+     git clone https://github.com/alan-sam/CS-4389-Secure-Bank-App.git
+     ```
 
-3. npm install
+2. **Navigate to Project Directory**:
+   ```bash
+   cd CS-4389-Comet-Bank
+   ```
 
-4. npm start
+3. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-5. Make sure you run the backend in Intellij or any java compiler and then it will login with the following username and password.
+4. **Start the Application**:
+   ```bash
+   npm start
+   ```
 
-6. afterrunning use username = 'alan@gmail.com', password = 'password'. 
+5. **Run the Backend**:
+   - Ensure the backend server is running in IntelliJ or your preferred Java IDE.
 
-That would start your application and work.
+6. **Access the Application**:
+   - Use the credentials:
+     - Username: `rajas2.kothari@gmail.com`
+     - Password: `password2`
+     - Username: `alan@gmail.com`
+     - Password: `password`
+
+   - This will grant you access to the Comet Bank application.
+
+Enjoy exploring Comet Bank's features and functionalities!
