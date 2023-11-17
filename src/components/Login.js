@@ -20,7 +20,7 @@ const Login = () => {
       password: password,
     };
   
-    fetch("http://localhost:9000/bankingApp/login", { // Update this URL based on your Spring Boot route
+    fetch("http://localhost:9000/bankingApp/login", { 
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,13 +28,13 @@ const Login = () => {
       body: JSON.stringify(reqBody),
     })
       .then(async (response) => {
-        const data = await response.json(); // Assuming server responds with JSON
+        const data = await response.json(); 
         console.log('Response Status:', response.status);
         console.log('Login Data:', data);
   
         if (response.status === 200) {
           if(data === true) {
-            navigate(`/auth?email=${email}`); // Update to navigate to the dashboard or appropriate route
+            navigate(`/auth?email=${email}`); 
             startSessionTimer();
           } else {
             setErrorMsg("Invalid username or password");
@@ -49,34 +49,34 @@ const Login = () => {
       });
 
       const startSessionTimer = () => {
-        // Clear any existing timers
+        
         if (sessionTimeout) clearTimeout(sessionTimeout);
     
-        // Set a new timer
+        
         const timeout = setTimeout(() => {
           showLogoutWarning();
-        }, 10 * 60000); // 5 minute in milliseconds
+        }, 10 * 60000); 
     
-        // Save the timeout to state so we can clear it if needed
+        
         setSessionTimeout(timeout);
     };
     const showLogoutWarning = () => {
       let userHasResponded = false;
       setTimeout(() => {
           if (!userHasResponded) {
-              // If the user hasn't responded in 5 seconds, log them out
+              
               navigate("/");
           }
-      }, 5000); // Auto logout after 5 seconds if no response
+      }, 5000); 
   
       const userConfirmed = window.confirm("You will be logged out due to inactivity. Do you want to stay logged in?");
       userHasResponded = true;
   
       if (userConfirmed) {
-          // If the user wants to stay logged in, reset the session timer
+          
           startSessionTimer();
       } else {
-          // If the user chose to log out, navigate to the login page
+          
           navigate("/");
       }
   };

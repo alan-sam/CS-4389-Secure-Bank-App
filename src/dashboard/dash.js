@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppBar, Toolbar, Drawer, Button, Box, Typography, CssBaseline } from '@mui/material';
-import { AccountBox, ListAlt, ExitToApp, Send } from '@mui/icons-material';
-import {
-   Card, CardContent, CardHeader, Divider, List, ListItem, ListItemText, Grid, Paper, Avatar
-} from '@mui/material';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import '../App.css';
+import { AccountBox, ListAlt, ExitToApp, Send, Contacts as ContactsIcon } from '@mui/icons-material';
 
 function Dashboard() {
   // State for handling drawer open/close
@@ -80,7 +74,7 @@ function Dashboard() {
           {renderDrawerButton(<AccountBox />, 'Account', '/dashboard/account')}
           {renderDrawerButton(<ListAlt />, 'Transactions', '/dashboard/transactions')}
           {renderDrawerButton(<Send />, 'Transfer', '/dashboard/transfer')}
-          {renderDrawerButton(<Send/>, 'Contact', '/dashboard/Contact')}
+          {renderDrawerButton(<ContactsIcon/>, 'Contact', '/dashboard/Contact')}
         </Box>
 
         {/* Logout Button */}
